@@ -611,22 +611,3 @@ Response:
 
 ---
 
-## 📝 Resume Highlights
-
-> - Built a **production-grade agentic financial assistant** using LangGraph, LangChain, and Groq (Llama 3.3 70B) with a 6-layer guardrail pipeline — input validation, action plan auditing, human-in-the-loop escalation, policy compliance, hallucination detection, and PII redaction — all running in parallel via `RunnableParallel`
->
-> - Engineered a **RAG pipeline** over NVIDIA's real SEC 10-K filing (27,810 ChromaDB chunks, MMR retrieval) combined with live market data (yfinance), a sandboxed calculator, and DuckDuckGo search — enabling the agent to answer grounded financial queries with verified, real-time data
->
-> - Deployed a **multi-turn conversational UI** with Streamlit, SQLite-backed memory (LangGraph checkpointing), per-thread conversation history, and a human approval interrupt flow — blocking trades exceeding $10,000 or policy violations before tool execution
-
----
-
-## Important Notes
-
-- All trade executions are **simulated** — no real money is involved
-- This is for **educational purposes only** — not financial advice
-- The `chatbot.db-shm` and `chatbot.db-wal` files during runtime are normal SQLite WAL files — they disappear when Streamlit stops
-- The ChromaDB knowledge base only needs to be built **once** — persists to disk
-- The Groq free tier provides 14,400 requests/day — sufficient for development and demos
-
----
